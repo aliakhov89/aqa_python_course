@@ -1,4 +1,4 @@
 #На вход программе подается название футбольной команды.
 #Программа должна вывести текст в соответствии с условием задачи. <название футбольной команды> - чемпион!
-football_team_name = input()
-print(football_team_name, '-', 'Champion!')
+#football_team_name = input()
+print(input(), '-', 'Champion!')
