@@ -5,5 +5,5 @@ first_digit = int(input())
 second_digit = int(input())
 if first_digit > second_digit:
     print(second_digit)
-if first_digit < second_digit:
+else:
     print(first_digit)

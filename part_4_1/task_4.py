@@ -2,8 +2,7 @@
 #Программа должна вывести текст «Доступ разрешен», если возраст пользователя не менее 18 лет или «Доступ запрещен» в противном случае.
 
 user_age = int(input())
-is_age_is_18 = user_age - 18
-if is_age_is_18 >= 0:
+if user_age >= 18:
     print('Access granted')
 else:
     print('Access denied')
