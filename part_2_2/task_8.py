@@ -3,7 +3,4 @@
 first_row = input()
 second_row = input()
 third_row = input()
-
-print(third_row)
-print(second_row)
-print(first_row)
+print(third_row, second_row, first_row, sep='\n')

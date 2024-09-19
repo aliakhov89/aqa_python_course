@@ -1,6 +1,4 @@
 #На вход программе подаются четыре строки (каждая на отдельной строке): строка-разделитель и три строки.
 #Программа должна вывести введённые три строки через разделитель.
 separator = input()
-second_raw = input()
-third_raw = input()
-fourth_raw = input()
+print(input(), input(), input(), sep = separator)
