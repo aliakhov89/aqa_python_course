@@ -1,3 +1,4 @@
+#in this file only examples from the lesson
 # function print()
 print('We learn programing language Python')
 print('I', 'am', 'learning', 'to', 'program', 'in', 'Python!')
@@ -14,31 +15,6 @@ print("I'm", 'the', "BAD", 'guy')
 print("12 ' 34")
 print("I'm the BAD guy")
 print("I'm", 'Just', 'Ken', "!")
-
-#tasks function print()
-#task 1
-print('Hello, world!')
-
-#task 2
-print('4', '8', '15', '16', '23', '42')
-
-#task 3
-print('4')
-print('8')
-print('15')
-print('16')
-print('23')
-print('42')
-
-#task 4
-print('*')
-print('**')
-print('***')
-print('****')
-print('*****')
-print('******')
-print('*******')
-
 
 # function input() + variables
 print('What is your name?')     # вывод текста
@@ -66,30 +42,3 @@ name2 = name1
 name1 = 'Andrii'
 print(name1)
 print(name2)
-
-#tasks function input()
-#1
-input_name = input()
-print('Hi,', input_name)
-
-#2
-football_team_name = input()
-print(football_team_name, '-', 'Champion!')
-
-#3
-first_row = input()
-second_row = input()
-third_row = input()
-
-print(first_row)
-print(second_row)
-print(third_row)
-
-#4
-first_row = input()
-second_row = input()
-third_row = input()
-
-print(third_row)
-print(second_row)
-print(first_row)

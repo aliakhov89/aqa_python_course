@@ -1,3 +1,4 @@
+#in this file only examples from the lesson
 #sep, end, variables, PEP 8
 
 print('aa', 'bb', 'cc')
@@ -48,23 +49,6 @@ end2 = '?'
 print('YES', 'NO', sep=sep1, end='+')
 print('MAYBE', 'NEVER', sep='*', end=end2)
 print()
-#I***like***Python
-#tasks for 2.3
-#1
-print('I', 'like', 'Python', sep='***')
-
-#2
-
-name = input()
-print('Hi', name, sep=', ', end='!')
-
-#3
-separator = input()
-second_raw = input()
-third_raw = input()
-fourth_raw = input()
-
-print(second_raw, third_raw, fourth_raw, sep=separator)
 
 #Multiple assignment
 
