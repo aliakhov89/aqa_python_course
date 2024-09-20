@@ -2,8 +2,8 @@
 #На вход программе подаётся целое число x
 #Программа должна вывести текст в соответствии с условием задачи.
 
-typed_nmb = int(input())
-if typed_nmb > -1 and typed_nmb < 17:
+#typed_nmb = int(input())
+if -1 < int(input()) < 17:
     print('Belongs')
 else:
     print('Not Belongs')
