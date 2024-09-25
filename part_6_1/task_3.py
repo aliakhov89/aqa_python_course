@@ -3,7 +3,7 @@
 #Если при этом введённое с клавиатуры число – ноль, то вывести «Обратного числа не существует» (без кавычек).
 
 typed_nmb = float(input())
-if typed_nmb > 0 or typed_nmb < 0:
+if typed_nmb != 0:
     print(1 / typed_nmb)
 else:
     print("There is no reciprocal number")
