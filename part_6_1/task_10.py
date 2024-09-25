@@ -5,10 +5,11 @@
 
 
 typed_nmb = int(input())
-first_digit = typed_nmb // 100
-second_digit = typed_nmb // 10 % 10
-third_digit = typed_nmb % 10
-if max(first_digit, second_digit, third_digit) - min(first_digit, second_digit, third_digit) == ((first_digit + second_digit + third_digit) - max(first_digit, second_digit, third_digit) - min(first_digit, second_digit, third_digit)):
+max_digit = max(typed_nmb // 100, typed_nmb // 10 % 10, typed_nmb % 10)
+min_digit = min(typed_nmb // 100, typed_nmb // 10 % 10, typed_nmb % 10)
+med_digit = (typed_nmb // 100 + typed_nmb // 10 % 10 + typed_nmb % 10) - max_digit - min_digit
+
+if max_digit - min_digit == med_digit:
     print("Interesting digit")
 else:
     print("Not Interesting digit")
