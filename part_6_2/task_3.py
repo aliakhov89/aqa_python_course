@@ -4,4 +4,4 @@
 
 
 football_team_name = input()
-print('Football team' + ' ' + football_team_name + ' ' + 'has name length' + ' ' + str(len(football_team_name)) + ' ' + 'symbols')
+print('Football team', football_team_name, 'has name length', len(football_team_name), 'symbols')
