@@ -6,13 +6,9 @@ typed_text_1 = input()
 typed_text_2 = input()
 typed_text_3 = input()
 
-typed_text_1_length = len(typed_text_1)
-typed_text_2_length = len(typed_text_2)
-typed_text_3_length = len(typed_text_3)
-
-max_length = max(typed_text_1_length, typed_text_2_length, typed_text_3_length)
-min_length = min(typed_text_1_length, typed_text_2_length, typed_text_3_length)
-med_length = typed_text_1_length + typed_text_2_length + typed_text_3_length - max_length - min_length
+max_length = max(len(typed_text_1), len(typed_text_2), len(typed_text_3))
+min_length = min(len(typed_text_1), len(typed_text_2), len(typed_text_3))
+med_length = len(typed_text_1) + len(typed_text_2) + len(typed_text_3) - max_length - min_length
 
 if med_length - min_length == max_length - med_length:
     print('YES')
