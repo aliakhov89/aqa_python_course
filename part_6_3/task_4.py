@@ -4,6 +4,4 @@
 
 from math import *
 angle_x = float(input())
-angle_x_radians = radians(angle_x)
-
-print(sin(angle_x_radians) + cos(angle_x_radians) + pow(tan(angle_x_radians), 2))
+print(sin(radians(angle_x)) + cos(radians(angle_x)) + pow(tan(radians(angle_x)), 2))
