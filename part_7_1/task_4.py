@@ -5,4 +5,4 @@
 
 typed_n = int(input())
 for i in range(typed_n):
-    print('*******************')
+    print('*' * 19)
