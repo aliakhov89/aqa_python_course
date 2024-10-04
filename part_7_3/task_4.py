@@ -7,7 +7,8 @@
 num_n = int(input())
 total = 0
 for i in range(1, num_n + 1):
-    if i ** 2 % 10 == 2 or i ** 2 % 10 == 5 or i ** 2 % 10 == 8:
+    last_digit_sqr_i = i ** 2 % 10
+    if last_digit_sqr_i == 2 or last_digit_sqr_i == 5 or last_digit_sqr_i == 8:
         total += i
 print(total)
 
