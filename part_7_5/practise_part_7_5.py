@@ -1,5 +1,5 @@
 num = int(input())
-has_seven = False  # сигнальная метка
+has_seven = False  # сигнальная  метка
 
 while num != 0:
     last_digit = num % 10
