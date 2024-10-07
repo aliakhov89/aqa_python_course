@@ -21,7 +21,7 @@ while typed_coins_amount > 0:
     elif typed_coins_amount >= 5:
         typed_coins_amount -= 5
         counter += 1
-    elif typed_coins_amount >= 1:
+    else:
         typed_coins_amount -= 1
         counter += 1
 print(counter)
