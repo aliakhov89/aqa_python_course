@@ -13,7 +13,5 @@
 #Программа должна вывести треугольник в соответствии с условием.
 
 typed_nmb = int(input())
-for i in range(1, typed_nmb // 2 + 1):
-    print('*' * i)
-for j in range(typed_nmb // 2 + 1, 0, -1):
-    print('*' * j)
+for i in range(1, typed_nmb + 1):
+    print('*' * min(i, typed_nmb - i + 1))

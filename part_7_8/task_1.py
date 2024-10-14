@@ -5,7 +5,7 @@
 #Программа должна вывести таблицу размером n×3, состоящую из данного числа.
 
 typed_nmb = int(input())
-for i in range(typed_nmb):
-    for j in range(3):
+for raw in range(typed_nmb):
+    for column in range(3):
         print(typed_nmb, end = ' ')
     print()

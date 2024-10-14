@@ -15,3 +15,6 @@ for i in range(1, typed_nmb + 1):
     for j in range(i):
         print(i, end = '')
     print()
+
+#for i in range(1, typed_nmb) + 1):
+    #print(str(i) * i)
