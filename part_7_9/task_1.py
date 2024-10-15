@@ -13,8 +13,8 @@
 
 typed_nmb = int(input())
 total = 0
-for i in range(1, typed_nmb + 1):
-    for j in range(i):
+for row in range(1, typed_nmb + 1):
+    for row_items in range(row):
         total += 1
         print(total, end = ' ')
     print()

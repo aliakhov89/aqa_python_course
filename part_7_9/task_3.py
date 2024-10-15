@@ -10,12 +10,12 @@ a, b = int(input()), int(input())
 total = 0
 maximum_total = 0
 nmb_with_max_divisor_sum = 0
-for i in range(a, b + 1):
-    for k in range(1, i + 1):
-        if i % k == 0:
-            total += k
+for nmb in range(a, b + 1):
+    for divisor in range(1, nmb + 1):
+        if nmb % divisor == 0:
+            total += divisor
     if total >= maximum_total:
         maximum_total = total
-        nmb_with_max_divisor_sum = i
+        nmb_with_max_divisor_sum = nmb
     total = 0
 print(nmb_with_max_divisor_sum, maximum_total)

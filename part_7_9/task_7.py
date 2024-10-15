@@ -9,10 +9,10 @@
 
 a, b = int(input()), int(input())
 total = 0
-for i in range(a, b + 1):
-    for k in range(1, i + 1):
-        if i % k == 0:
+for nmb in range(a, b + 1):
+    for divisor in range(1, nmb + 1):
+        if nmb % divisor == 0:
             total += 1
     if total == 2:
-        print(i)
+        print(nmb)
     total = 0
