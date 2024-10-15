@@ -5,7 +5,7 @@
 #Программа должна вывести таблицу размером n×5 в соответствии с условием.
 
 typed_nmb = int(input())
-for i in range(1, typed_nmb + 1):
-    for j in range(5):
-        print(i, end = ' ')
+for row in range(1, typed_nmb + 1):
+    for column in range(5):
+        print(row, end = ' ')
     print()

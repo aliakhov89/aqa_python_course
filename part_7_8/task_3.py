@@ -8,9 +8,9 @@
 #Примечание 2. В конце строки может быть пробел.
 
 typed_nmb = int(input())
-for i in range(1, typed_nmb + 1):
-    for j in range(1, 10):
-        print(i, '+', j, '=', i+j)
+for table_item in range(1, typed_nmb + 1):
+    for row in range(1, 10):
+        print(table_item, '+', row, '=', table_item+row)
     print(end = '\n')
 
 

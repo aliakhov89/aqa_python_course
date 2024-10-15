@@ -11,9 +11,9 @@
 #Примечание. Используйте вложенный цикл for.
 
 typed_nmb = int(input())
-for i in range(1, typed_nmb + 1):
-    for j in range(i):
-        print(i, end = '')
+for row in range(1, typed_nmb + 1):
+    for row_items in range(row):
+        print(row, end = '')
     print()
 
 #for i in range(1, typed_nmb) + 1):
