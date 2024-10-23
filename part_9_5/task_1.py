@@ -8,10 +8,11 @@
 
 #Для каждого комментария программа должна вывести его текст или сообщение «COMMENT SHOULD BE DELETED», если комментарий должен быть удалён.
 
+
 comments_amount = int(input())
 for comment in range(1, comments_amount + 1):
     typed_comment = input()
-    if typed_comment == '' or typed_comment.isspace():
+    if typed_comment.strip() == '':
         print(comment,': ',  'COMMENT SHOULD BE DELETED', sep='')
     else:
         print(comment,': ', typed_comment, sep='')
