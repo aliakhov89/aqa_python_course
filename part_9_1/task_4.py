@@ -4,3 +4,7 @@
 typed_symbols = input()
 for symbol in range(-1, - len(typed_symbols) - 1, -1):
     print(typed_symbols[symbol])
+
+#Через зріз
+typed_symbols = input()
+print(*typed_symbols[::-1], sep = '\n')

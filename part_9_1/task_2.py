@@ -4,4 +4,4 @@
 #print(s[])
 
 sentense = "In 2010, someone paid 10k Bitcoin for two pizzas."
-print(s[39])
+print(sentense[39])

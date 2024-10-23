@@ -12,3 +12,11 @@ for symbol in range(len(typed_str)):
 if flag:
     print('No Digits')
 
+#без флагу
+typed_txt = input()
+for symbol in typed_txt:
+    if symbol in '01234567890':
+        print("Digit")
+        break
+else:
+    print("No Digits")
