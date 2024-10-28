@@ -37,6 +37,21 @@ print(f'New price: {msg_price_new}🐝')
 
 
 
+#My second variant:
+typed_msg_en = input()
+msg_price_old = sum(ord(symbol) * 3 for symbol in typed_msg_en)
+msg_price_new = 0
+ru_letters = 'еуорахсЕТОРАНХСВМ'
+en_letters = 'eyopaxcETOPAHXCBM'
+for symbol in typed_msg_en:
+    #check eng letters
+    if symbol in en_letters:
+        symbol = ru_letters[en_letters.find(symbol)]
+    msg_price_new += ord(symbol) * 3
+print(f'Old price: {msg_price_old}🐝')
+print(f'New price: {msg_price_new}🐝')
+
+
 
 
 

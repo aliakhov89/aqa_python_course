@@ -26,5 +26,13 @@ elif max_weight_word == third_word_weight:
 elif max_weight_word == fourth_word_weight:
     print(fourth_word)
 
-
-
+#Fixed in this way:
+first_word, second_word, third_word, fourth_word = input(), input(), input(), input()
+max_weight = 0
+max_weight_word = ""
+for word in (first_word, second_word, third_word, fourth_word):
+    word_weight = sum(ord(symbol) for symbol in word)
+    if word_weight > max_weight:
+        max_weight = word_weight
+        max_weight_word = word
+print(max_weight_word)
