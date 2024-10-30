@@ -25,7 +25,7 @@ previous_surname = ''
 previous_book_name = ''
 for book_item in range(raw_amount):
     book = input()
-    current_surname = book[: book.find(' ')]
+    current_surname = book.split()[0]
     current_book_name = book[book.find('«') + 1 : book.rfind('»')]
 
     if current_surname < previous_surname or (

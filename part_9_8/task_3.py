@@ -14,7 +14,7 @@ class_letters = 'АБВГДЕЖЗИЙКЛМНОП'
 class_numbers = int(input())
 for number in range(class_numbers):
     class_name = input()
-    if len(class_name) == 2 and class_name[0].isdigit() and class_name[1] in class_letters:
+    if len(class_name) == 2 and class_name[0] <= '9' and class_name[1] in class_letters:
         print('YES')
     else:
         print('NO')
