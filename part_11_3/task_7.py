@@ -7,3 +7,8 @@ numbers = []
 for nmb in range(typed_nmb):
     numbers.append(int(input()))
 print(numbers[0::2])
+
+
+# з map
+numbers = list(map(int, (input() for i in range(int(input())))))
+print(numbers[0::2])
