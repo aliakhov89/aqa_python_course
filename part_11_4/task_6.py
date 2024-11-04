@@ -24,3 +24,13 @@ for i in range(row_amount):
 
 
 
+#with all
+row_amount = int(input())
+rows = [input() for i in range(row_amount)]
+k = int(input())
+queries = [input().lower() for j in range(k)]
+for row in rows:
+    if all(query in row.lower() for query in queries):
+        print(row)
+
+

@@ -9,3 +9,11 @@ print(*digits, sep = '\n')
 print()
 for x in digits:
     print( x ** 2 + 2 * x + 1)
+
+
+
+x = [int(input()) for i in range(int(input()))]
+print(*x, sep='\n')
+print()
+for num in x:
+    print(num ** 2 + 2 * num + 1)
