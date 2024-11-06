@@ -8,3 +8,5 @@ for i in typed_name:
 print(''.join(name_parts))
 
 
+typed_name = input().split()
+print(''.join(i[0] + '.' for i in typed_name))
