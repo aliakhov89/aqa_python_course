@@ -2,6 +2,7 @@
 # Одной из такой проблем являлся странный компьютерный вирус, который проявлялся в виде появления комментариев к программам на терминалах Братства Стали.
 # Известно, что программисты Братства никогда не оставляют комментарии к коду и пишут программы на Python, поэтому удаление всех этих комментариев никак не навредит им.
 # Помогите писцу Ибсену удалить все комментарии из программы.
+from setuptools.command.build_ext import if_dl
 
 #Формат входных данных
 #На первой строке вводится символ решётки и сразу же натуральное число n — количество строк в программе, не считая первой.
@@ -15,8 +16,8 @@
 
 #Примечание 2. Гарантируется, что в самом коде программы отсутствуют символы #.
 
-first_row = input()
-digit_from_row = int(first_row[1:])
+
+digit_from_row = int(input()[1:])
 for i in range(digit_from_row):
     typed_code_row = input()
     if '#' in typed_code_row:
@@ -24,5 +25,9 @@ for i in range(digit_from_row):
     print(typed_code_row.rstrip())
 
 
+#без if
 
-
+digit_from_row = int(input()[1:])
+for _ in range(digit_from_row):
+    typed_code_row = input().split('#', 1)[0]
+    print(typed_code_row.rstrip())

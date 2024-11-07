@@ -15,3 +15,8 @@ print(*typed_nmbs)
 typed_nmbs.sort(reverse = True)
 print(*typed_nmbs)
 
+
+#2
+typed_nmbs = list(map(int, input().split()))
+print(*sorted(typed_nmbs))
+print(*sorted(typed_nmbs, reverse=True))
