@@ -20,3 +20,11 @@ elif ''.join(typed_text).isdigit() and lenth_typed_text == [1, 3, 3, 4] and type
 else:
     print('NO')
 
+#In one if:
+
+typed_text = [i for i in input().split('-')]
+lenth_typed_text = [len(j) for j in typed_text]
+if ''.join(typed_text).isdigit() and (lenth_typed_text == [3, 3, 4] or (lenth_typed_text == [1, 3, 3, 4] and typed_text[0] == '7')):
+    print('YES')
+else:
+    print('NO')
