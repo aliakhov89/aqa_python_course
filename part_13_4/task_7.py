@@ -35,3 +35,24 @@ for i in range(int(input())):
 print(*result)
 
 
+# Changes as in comment
+def quick_merge(list_1, list_2):
+    result = []
+    index_list_1 = 0
+    index_list_2 = 0
+    while index_list_1 < len(list_1) and index_list_2 < len(list_2):
+        if list_1[index_list_1] <= list_2[index_list_2]:
+            result.append(list_1[index_list_1])
+            index_list_1 += 1
+        else:
+            result.append(list_2[index_list_2])
+            index_list_2 += 1
+    result += list_1[index_list_1:]
+    result += list_2[index_list_2:]
+    return result
+list_1 = []
+for i in range(int(input())):
+    list_2 = [int(j) for j in input().split()]
+    list_1 = quick_merge(list_1, list_2)
+print(*list_1)
+
