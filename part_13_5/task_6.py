@@ -15,3 +15,12 @@ def is_palindrome(text):
 typed_txt = input()
 
 print(is_palindrome(typed_txt))
+
+
+#з isalnum()
+def is_palindrome(text):
+    filtered_text = ''.join(symbol.lower() for symbol in text if symbol.isalnum())
+    return filtered_text == filtered_text[::-1]
+
+typed_txt = input()
+print(is_palindrome(typed_txt))

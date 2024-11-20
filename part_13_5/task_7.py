@@ -14,7 +14,7 @@ def is_valid_password(password):
     splited_pswd = password.split(":")
     if len(splited_pswd) != 3:
         return False
-    a, b, c = splited_pswd[0], splited_pswd[1], splited_pswd[2]
+    a, b, c = splited_pswd
     flag_a, flag_b, flag_c = False, False, False
     if a == a[::-1]:
         flag_a = True
@@ -34,3 +34,27 @@ print(is_valid_password(typed_psw))
 #Отут я в тупіку - не проходить в Степіку з такими данними
 #1991:1:20
 # очикується шо буде False а в мене True
+
+
+#з return:
+def is_valid_password(password):
+    splited_pswd = password.split(":")
+    if len(splited_pswd) != 3:
+        return False
+    a, b, c = splited_pswd
+    if a != a[::-1]:
+        return False
+
+    b = int(b)
+    for i in range(2, int(b ** 0.5) + 1):
+        if b % i == 0:
+            return False
+
+    if int(c) % 2 != 0:
+        return False
+
+    return True
+
+typed_psw = input()
+
+print(is_valid_password(typed_psw))

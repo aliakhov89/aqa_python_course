@@ -10,9 +10,7 @@
 def is_password_good(password):
     if len(password) < 8:
         return False
-    flag_upper = False
-    flag_lower = False
-    flag_digits = False
+    flag_upper = flag_lower = flag_digits = False
     for symbol in password:
         if symbol.isupper():
             flag_upper = True
