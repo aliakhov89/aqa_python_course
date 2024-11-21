@@ -18,3 +18,15 @@ text = input()
 
 # вызываем функцию
 print(is_pangram(text))
+
+
+
+
+def is_pangram(text):
+    alphabet = set('abcdefghijklmnopqrstuvwxyz')
+    text_set = set(text.lower().replace(' ', ''))
+    return alphabet <= text_set
+
+text = input()
+
+print(is_pangram(text))
