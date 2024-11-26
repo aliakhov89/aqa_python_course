@@ -1,0 +1,63 @@
+#Заголовок программы
+#1.Подключите модуль random;
+#2.Сгенерируйте случайное число от 1 до 100
+#3. Выведите текст приветствия пользователю: 'Добро пожаловать в числовую угадайку'.
+
+#Пользователь потенциально может ввести неверные данные, например, не число, или число превышающее 100
+#Важно предусмотреть такую возможность, чтобы программа продолжала правильно работать.
+# Обработка такого рода ситуаций называется защитой от дурака.
+
+#Напишите функцию is_valid() в которую передается один строковый аргумент.
+# Функция возвращает значение True если переданный аргумент является целым числом от 1 до 100 и False в противном случае.
+
+
+import random
+
+def is_valid(input_string):
+    if input_string.isdigit():
+        number = int(input_string)
+        return 1 <= number <= 100
+    return False
+
+print("Welcome to the number guessing game!")
+while True:
+    # Set right boarder for digit generation
+    while True:
+        upper_bound = input("Type right boarder for random digit (n > 1): ")
+        if is_valid(upper_bound) and int(upper_bound) > 1:
+            upper_bound = int(upper_bound)
+            break
+        else:
+            print("Please, type digit more than 1.")
+    # Random digit generation
+    random_number = random.randint(1, upper_bound)
+    print(f"A number from 1 to {upper_bound} is guessed. Try to guess!")
+    # Attempts counter
+    attempts = 0
+    while True:
+        user_input = input("Type a digit: ")
+        attempts += 1
+        if not is_valid(user_input) or not (1 <= int(user_input) <= upper_bound):
+            print(f"Or maybe we should introduce an integer from 1 to {upper_bound}?")
+            continue
+
+        user_number = int(user_input)
+        # Compare of typed number with the guessed one
+        if user_number < random_number:
+            print("Your number is less than the guessed one, try again")
+        elif user_number > random_number:
+            print("Your number is higher than the guessed one, try again")
+        else:
+            print(f"You guessed it, congratulations! It took 10 {attempts} tries.")
+            break  # Number is guessed, break current game
+    # Play again
+    play_again = input("Would you like to play again? (yes/no): ").strip().lower()
+    if play_again != "yes":
+        print("Thanks for playing the number guessing game. See you later...")
+        break
+
+
+
+
+
+
