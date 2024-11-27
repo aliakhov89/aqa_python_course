@@ -46,7 +46,7 @@ while True:
             upper_bound = int(upper_bound)
             break
         else:
-            print("Please, type digit more than 1.")
+            print("Please, type digit not less than 1 and not more than 100 .")
     # Random digit generation
     random_number = random.randint(1, upper_bound)
     print(f"A number from 1 to {upper_bound} is guessed. Try to guess!")
@@ -73,6 +73,74 @@ while True:
     if play_again != "yes":
         print("Thanks for playing the number guessing game. See you later...")
         break
+
+
+
+#move to functions
+
+import random
+#Check if the input string is a valid integer.
+def is_valid_number(input_string):
+    return input_string.isdigit()
+
+#Check if the number is within the specified range.
+def is_within_range(number, lower_bound=1, upper_bound=100):
+    return lower_bound <= number <= upper_bound
+
+#Prompt the user for a valid upper bound.
+def get_upper_bound():
+    while True:
+        upper_bound = input("Type the upper bound for the random digit (n > 1): ")
+        if is_valid_number(upper_bound) and int(upper_bound) > 1:
+            return int(upper_bound)
+        else:
+            print("Please, type a number greater than 1.")
+
+#Prompt the user for a valid guess within the given upper bound.
+def get_user_input(upper_bound):
+    while True:
+        user_input = input(f"Type a digit (1 to {upper_bound}): ")
+        if not is_valid_number(user_input):
+            print(f"Please, type a valid number between 1 and {upper_bound}.")
+            continue
+        user_number = int(user_input)
+        if not is_within_range(user_number, 1, upper_bound):
+            print(f"Please, choose a number between 1 and {upper_bound}.")
+            continue
+        return user_number
+
+#Main function to handle the guessing game logic.
+def play_game():
+    print("Welcome to the number guessing game!")
+
+    while True:
+        upper_bound = get_upper_bound()
+        random_number = random.randint(1, upper_bound)
+        print(f"A number from 1 to {upper_bound} has been selected. Try to guess!")
+
+        attempts = 0
+        while True:
+            user_number = get_user_input(upper_bound)
+            attempts += 1
+
+            # Compare the user's guess with the random number
+            if user_number < random_number:
+                print("Your number is less than the guessed one. Try again!")
+            elif user_number > random_number:
+                print("Your number is higher than the guessed one. Try again!")
+            else:
+                print(f"You guessed it! Congratulations! It took {attempts} tries.")
+                break  # Correct guess, exit the loop
+
+        # Ask if the player wants to play again
+        play_again = input("Would you like to play again? (yes/no): ").strip().lower()
+        if play_again != "yes":
+            print("Thanks for playing! See you later...")
+            break
+
+# Start the game
+play_game()
+
 
 
 
