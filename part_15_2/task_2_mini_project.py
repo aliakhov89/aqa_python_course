@@ -81,7 +81,10 @@ while True:
 import random
 #Check if the input string is a valid integer.
 def is_valid_number(input_string):
-    return input_string.isdigit()
+    if input_string.isdigit():
+        number = int(input_string)
+        return 1 <= number <= 100
+    return False
 
 #Check if the number is within the specified range.
 def is_within_range(number, lower_bound=1, upper_bound=100):
@@ -90,11 +93,12 @@ def is_within_range(number, lower_bound=1, upper_bound=100):
 #Prompt the user for a valid upper bound.
 def get_upper_bound():
     while True:
-        upper_bound = input("Type the upper bound for the random digit (n > 1): ")
+        upper_bound = input("Type right boarder for random digit (n > 1): ")
         if is_valid_number(upper_bound) and int(upper_bound) > 1:
             return int(upper_bound)
         else:
-            print("Please, type a number greater than 1.")
+            print("Please, type digit not less than 1 and not more than 100 .")
+
 
 #Prompt the user for a valid guess within the given upper bound.
 def get_user_input(upper_bound):
@@ -122,12 +126,17 @@ def play_game():
         while True:
             user_number = get_user_input(upper_bound)
             attempts += 1
+            #Common messages
+            message_common_before = "Your number is "
+            message_less = "less"
+            message_higher = "higher"
+            massage_common_after = " than the guessed one. Try again!"
 
             # Compare the user's guess with the random number
             if user_number < random_number:
-                print("Your number is less than the guessed one. Try again!")
+                print(message_common_before + message_less + massage_common_after)
             elif user_number > random_number:
-                print("Your number is higher than the guessed one. Try again!")
+                print(message_common_before + message_higher + massage_common_after)
             else:
                 print(f"You guessed it! Congratulations! It took {attempts} tries.")
                 break  # Correct guess, exit the loop
