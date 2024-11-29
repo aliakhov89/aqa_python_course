@@ -66,7 +66,7 @@ while True:
         elif user_number > random_number:
             print("Your number is higher than the guessed one, try again")
         else:
-            print(f"You guessed it, congratulations! It took 10 {attempts} tries.")
+            print(f"You guessed it, congratulations! It took {attempts} tries.")
             break  # Number is guessed, break current game
     # Play again
     play_again = input("Would you like to play again? (yes/no): ").strip().lower()
@@ -94,11 +94,13 @@ def is_within_range(number, lower_bound=1, upper_bound=100):
 def get_upper_bound():
     while True:
         upper_bound = input("Type right boarder for random digit (n > 1): ")
-        if is_valid_number(upper_bound) and int(upper_bound) > 1:
-            return int(upper_bound)
+        if upper_bound.isdigit():
+            upper_bound = int(upper_bound)
+
+            if is_within_range(upper_bound, 2, 100):  # upper_bound должен быть больше или равен 2
+                return upper_bound
         else:
             print("Please, type digit not less than 1 and not more than 100 .")
-
 
 #Prompt the user for a valid guess within the given upper bound.
 def get_user_input(upper_bound):
@@ -128,15 +130,13 @@ def play_game():
             attempts += 1
             #Common messages
             message_common_before = "Your number is "
-            message_less = "less"
-            message_higher = "higher"
             massage_common_after = " than the guessed one. Try again!"
 
             # Compare the user's guess with the random number
             if user_number < random_number:
-                print(message_common_before + message_less + massage_common_after)
+                print(message_common_before + "less" + massage_common_after)
             elif user_number > random_number:
-                print(message_common_before + message_higher + massage_common_after)
+                print(message_common_before + "higher" + massage_common_after)
             else:
                 print(f"You guessed it! Congratulations! It took {attempts} tries.")
                 break  # Correct guess, exit the loop
