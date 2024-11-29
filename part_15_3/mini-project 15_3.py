@@ -56,10 +56,11 @@ players_name = input('Enter your name: ')
 print('Hello', players_name)
 
 #question
-while True:
-    question = input('Enter your question: ')
+ask_again = "yes"
+while ask_again.lower() == "yes":
+    input("Enter your question: ")
     print(random.choice(BALL_ANSWERS))
-    ask_again = input('Do you want to ask again? ')
-    if ask_again.lower() == 'no':
-        print('Come back if you have more questions!')
-        break
+    ask_again = input("Do you want to ask again? (yes/no)")
+if ask_again.lower() != 'yes':
+    print('Come back if you have more questions!')
+
