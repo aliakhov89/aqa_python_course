@@ -44,17 +44,15 @@
 import random
 
 # String constants
-digits = "0123456789"
-lowercase_letters = "abcdefghijklmnopqrstuvwxyz"
-uppercase_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-punctuation = "!#$%&*+-=?@^_."
+DIGITS = "0123456789"
+LOWERCASE_LETTERS = "abcdefghijklmnopqrstuvwxyz"
+UPPERCASE_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+PUNCTUATION = "!#$%&*+-=?@^_."
 
 
 # Function to generate password
 def generate_password(length, chars):
-    password = ''.join(random.choice(chars) for i in range(length))
-    return password
-
+    return ''.join(random.choice(chars) for i in range(length))
 
 # Function to handle user input and generate passwords
 def generate_passwords():
@@ -65,28 +63,25 @@ def generate_passwords():
     # Build the available character set for the password
     chars = ''
 
-    include_digits = input("Include digits (0123456789)? (yes/no): ").lower() == 'yes'
-    include_uppercase = input("Include uppercase letters (ABCDEFGHIJKLMNOPQRSTUVWXYZ)? (yes/no): ").lower() == 'yes'
-    include_lowercase = input("Include lowercase letters (abcdefghijklmnopqrstuvwxyz)? (yes/no): ").lower() == 'yes'
-    include_punctuation = input("Include special characters (!#$%&*+-=?@^_)? (yes/no): ").lower() == 'yes'
-    exclude_ambiguous = input("Exclude ambiguous characters (il1Lo0O)? (yes/no): ").lower() == 'yes'
+    if input("Include digits (0123456789)? (yes/no): ").lower() == 'yes':
+        chars += DIGITS
+    if input("Include uppercase letters (ABCDEFGHIJKLMNOPQRSTUVWXYZ)? (yes/no): ").lower() == 'yes':
+        chars += UPPERCASE_LETTERS
+    if input("Include lowercase letters (abcdefghijklmnopqrstuvwxyz)? (yes/no): ").lower() == 'yes':
+        chars += LOWERCASE_LETTERS
+    if input("Include special characters (!#$%&*+-=?@^_)? (yes/no): ").lower() == 'yes':
+        chars += PUNCTUATION
+    if input("Exclude ambiguous characters (il1Lo0O)? (yes/no): ").lower() == 'yes':
+        chars = ''.join([ch for ch in chars if ch not in "il1Lo0O"])
 
-    # Build the character set for password generation
-    if include_digits:
-        chars += digits
-    if include_uppercase:
-        chars += uppercase_letters
-    if include_lowercase:
-        chars += lowercase_letters
-    if include_punctuation:
-        chars += punctuation
-    if exclude_ambiguous:# Remove ambiguous characters
-        ambiguous_chars = "il1Lo0O"
-        chars = ''.join([ch for ch in chars if ch not in ambiguous_chars])
+    # Check if the character set is empty
+    if not chars:
+        print("Error: No characters selected for the password.")
+        return  # Exit the function if no characters were selected
 
     # Generate and print the passwords
     for _ in range(num_passwords):
-        password = generate_password(password_length, chars)
-        print(password)
+        print(generate_password(password_length, chars))
+
 
 generate_passwords()
