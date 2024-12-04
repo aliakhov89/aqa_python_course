@@ -28,15 +28,10 @@ def caesar_cipher(text, shift, alphabet, mode='encrypt'):
         shift = -shift
 
     # Convert symbols to text
-    for char in text:
-        if char in alphabet:
-            # Get index of a symbol in the alphabet
-            new_index = (alphabet.index(char) + shift) % len(alphabet)
-            result.append(alphabet[new_index])
-        else:
-            result.append(char)
-
-    return ''.join(result)
+    return ''.join([
+        alphabet[(alphabet.index(char) + shift) % len(alphabet)] if char in alphabet else char
+        for char in text
+    ])
 
 
 def get_alphabet(language):

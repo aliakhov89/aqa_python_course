@@ -17,27 +17,15 @@ eng_lowercase_letters = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'
 
 typed_text = input().split()
 
-encrypted_text = ''
+encrypted_text = ' '.join([ # Count the number of letters in the word using sum() and List Comprehension
+    ''.join([(eng_capital_letters[(eng_capital_letters.find(char) + sum(1 for c in word if c.isalpha()))] if char.isupper()
+            else
+            eng_lowercase_letters[(eng_lowercase_letters.find(char) + sum(1 for c in word if c.isalpha()))]) if char.isalpha()
+        else char  # If the character is not a letter, keep it unchanged
+        for char in word
+    ])
+    for word in typed_text
+])
 
-#count letters in the word:
-for i in typed_text:
-   z = 0
-   for j in i:
-       if j.isalpha() == True:
-           z += 1
-   for j in i: #encrypting
-       capital_letters_position_before_encryption = eng_capital_letters.find(j)
-       lowercase_letters_position_before_encryption = eng_lowercase_letters.find(j)
-       capital_letters_position_after_encryption = capital_letters_position_before_encryption + z
-       lowercase_letters_position_after_encryption = lowercase_letters_position_before_encryption + z
-       if j.isalpha() == True:
-           if j == j.upper():
-               encrypted_text += eng_capital_letters[capital_letters_position_after_encryption]
-           elif j == j.lower():
-               encrypted_text += eng_lowercase_letters[lowercase_letters_position_after_encryption]
-       else:
-
-           encrypted_text += j
-   encrypted_text += ' '
 print(encrypted_text)
 
